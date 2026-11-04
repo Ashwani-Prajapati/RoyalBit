@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #030712;
+    color: #f1f5f9;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060d21;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3264;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d2ff;
+}
+
+/* Glowing Neon Elements */
+.glow-blue {
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.25);
+}
+
+.glow-blue-lg {
+  box-shadow: 0 0 40px rgba(0, 210, 255, 0.45);
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.25);
+}
+
+.text-glow {
+  text-shadow: 0 0 12px rgba(0, 210, 255, 0.6);
+}
+
+.text-gold-glow {
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(13, 27, 62, 0.7) 0%, rgba(6, 13, 33, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(30, 50, 100, 0.45);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(0, 210, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(0, 210, 255, 0.25);
+}
+
+.glass-card-glow {
+  background: radial-gradient(120% 120% at 50% 0%, rgba(0, 210, 255, 0.08) 0%, rgba(10, 22, 54, 0.6) 100%);
+  border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+/* Background Gradients */
+.bg-radial-grid {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(0, 150, 255, 0.12) 0%, transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 36px 36px, 36px 36px;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s infinite ease-in-out;
+}
